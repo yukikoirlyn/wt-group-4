@@ -45,7 +45,7 @@ with st.sidebar:
 
 st.markdown('<div style="text-align: center;font-size:40px;font-weight:bold;">Tantangan Cyber Attack di Era Digital</div>', unsafe_allow_html=True)
 st.markdown('<br>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;font-size:20px;">Di era Pandemi ini Pergerakan kegiatan manusia yang semula dilakukan secara konvesional berubah menjadi secara digital, Begitu banyak data dan\
+st.markdown('<div style="text-align: justify;font-size:15px;">Di era Pandemi ini Pergerakan kegiatan manusia yang semula dilakukan secara konvesional berubah menjadi secara digital, Begitu banyak data dan\
     informasi yang disebarkan secara digital setiap harinya, Padat nya arus lalu lintas\
         informasi dan kegiatan di internet seakan-akan internet menjadi dunia tersendiri\
             tanpa batas. Tentu hal ini tidak terlepas dari banyak nya penyalahgunaan untuk tujuan\
@@ -80,8 +80,8 @@ with kolom1:
     fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
     fig.update_layout(
         autosize=False,
-        width=700,
-        height=700
+        width=500,
+        height=500
     )
     st.plotly_chart(fig, use_container_width=True)
 with kolom2:
@@ -99,6 +99,40 @@ with kolom2:
                     personal sebesar 2,66 persen.\
                         </div>', unsafe_allow_html=True)
 
+st.markdown('<div style="text-align: justify;font-size:15px;">Atas temuan ini, tidak harus\
+     perusahaan besar saja yang harus memahami cyber attack akan tetapi masyarakat \
+        juga harus memahami jenis serangan cyber attack dan mempersiapkan langkah yang \
+            tepat untuk meredam aktivitas serangan ini di tahun 2022\
+    </div>', unsafe_allow_html=True)
+st.markdown('<br>', unsafe_allow_html=True)
+st.markdown("---")
+st.markdown('<div style="text-align: center;font-size:20px;font-weight:bold;">Kejahatan Sektor Penyebaran Informasi Palsu</div>', unsafe_allow_html=True)
+st.markdown('<br>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: justify;font-size:15px;">Laporan dari Kementerian Komunikasi dan Informatika\
+     pada Agustus 2020\
+        </div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align:center;font-size:40px;color:red;">1160</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align:center;font-size:20px;color:red;">kasus hoaks terkait COVID-19</div>', unsafe_allow_html=True)
+st.markdown('<br>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: justify;font-size:15px;">Laporan jumlah hoaks selama 3 tahun dari Masyarakat\
+    Anti Fitnah Indonesia (Mafindo) berkolaborasi dengan cekfakta.com\
+        </div>', unsafe_allow_html=True)
+fig = go.Figure(go.Bar(
+            x=[997, 1221, 2024],
+            y=['2018', '2019', '2020'],
+            orientation='h'))
+fig.update_layout(
+        autosize=False,
+        width=700,
+        height=400)
+st.plotly_chart(fig, use_container_width=True)
+st.markdown("---")
+
+st.markdown('<div style="text-align: center;font-size:20px;font-weight:bold;">Polisi Siber</div>', unsafe_allow_html=True)
+st.markdown('<br>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: justify;font-size:15px;">Menteri Koordinator Bidang Politik, Hukum, dan Keamanan (Menko Polhukam) Mahfud MD menyatakan bahwa pada tahun 2021 polisi siber akan diaktifkan secara \
+    sungguh-sungguh. hadirnya polisi siber merupakan bukti nyata dari keberadaan negara dalam ruang digital.\
+        </div>', unsafe_allow_html=True)
 
 df = pd.read_csv("patrolisiber.csv")
 df.astype({col: int for col in df.columns[1:]})
@@ -111,8 +145,27 @@ dfl_unpivot = pd.melt(df, id_vars='Bulan', value_vars=['Child_Porn', 'Criminal',
 
 lap = px.bar(dfl_unpivot, x = "Bulan", y = "value", color = "variable")
 lap.update_layout(xaxis_type='category')
-tab1, cht1 = st.columns([1, 4])
-with tab1:
-    st.write(df, height= 500)
-with cht1:
-    st.plotly_chart(lap, use_container_width=True)
+#tab1, cht1 = st.columns([1, 4])
+#with tab1:
+#    st.write(df, height= 500)
+#with cht1:
+st.plotly_chart(lap, use_container_width=True)
+st.markdown('<div style="text-align: justify;font-size:15px;">Data kami ambil dari \
+    https://patrolisiber.id/ di awal tahun 2020 sampai triwulan kedua tahun 2021 perjudian menjadi \
+        tindak Cyber Attack yang palng tinggi, disusul dengan Penghinaan dan Pencemaran nama baik di \
+            Posisi Kedua, serta Tindakan Pengancaman di posisi ketiga. Pada Juli 2021 sampai di akhir \
+                tahun Penghinaan dan Pencemaran nama baik menjadi kejahatan tertinggi. Sedangkan pada \
+                    awal tahun 2022 lagi-lagi perjudian menempat posisi pertama\
+                        </div>', unsafe_allow_html=True)
+
+st.markdown("---")
+
+st.markdown('<div style="text-align: center;font-size:20px;font-weight:bold;">Apa yang dapat kita simpulkan?</div>', unsafe_allow_html=True)
+st.markdown('<br>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: justify;font-size:15px;">Saat ini sektor apapun perlu mulai \
+    memperhatikan cyber security pada data dan komputer mereka karena siapa saja bisa menjadi target \
+        serangan hacker. Anda dapat memulainya dengan melakukan maintenance secara rutin untuk \
+            memastikan bahwa sistem website atau aplikasi yang Anda gunakan benar-benar kuat \
+                menghadapi serangan cyber. Anda juga perlu meningkatkan security awareness untuk \
+                    menghindari serangan social engineering yang banyak terjadi.\
+                        </div>', unsafe_allow_html=True)
