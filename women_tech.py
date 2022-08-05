@@ -14,16 +14,16 @@ image2 = Image.open('profil.png')
 gmail = Image.open('gmail.png')
 
 with st.sidebar:
-    st.markdown('<div style="text-align: center;font-size:60px;font-weight:bold;color:grey;">Hackathon</div>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align: center;font-size:25px;color:grey;">Women in Tech: Cybersecurity and Python</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align: center;font-size:40px;font-weight:bold;color:grey;">Hackathon</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align: center;font-size:15px;color:grey;">Women in Tech: Cybersecurity and Python</div>', unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html=True)
-    st.markdown('<div style="text-align: center;font-size:25px;font-weight:boldcolor:grey;">Meet with us</div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align: center;font-size:15px;font-weight:boldcolor:grey;">Meet with us</div>', unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html=True)
-    col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1,1,1])
     with col1:
         st.write("")
     with col2:
@@ -32,7 +32,7 @@ with st.sidebar:
         st.write("")
     st.markdown('<div style="text-align:center;font-size:20px;color:grey;">Martha Shella Rahmawati</div>', unsafe_allow_html=True)
     st.markdown('<div style="text-align:center;font-size:15px;color:grey;">ashella660@gmail.com</div>', unsafe_allow_html=True)
-    col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1,1,1])
     with col1:
         st.write("")
     with col2:
@@ -43,7 +43,7 @@ with st.sidebar:
     st.markdown('<div style="text-align:center;font-size:15px;color:grey;">irliyaniyukiko@gmail.com</div>', unsafe_allow_html=True)
     
 
-st.markdown('<div style="text-align: center;font-size:60px;font-weight:bold;">Tantangan Cyber Attack di Era Digital</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center;font-size:40px;font-weight:bold;">Tantangan Cyber Attack di Era Digital</div>', unsafe_allow_html=True)
 st.markdown('<br>', unsafe_allow_html=True)
 st.markdown('<div style="text-align: justify;font-size:20px;">Di era Pandemi ini Pergerakan kegiatan manusia yang semula dilakukan secara konvesional berubah menjadi secara digital, Begitu banyak data dan\
     informasi yang disebarkan secara digital setiap harinya, Padat nya arus lalu lintas\
@@ -55,7 +55,7 @@ st.markdown('<div style="text-align: justify;font-size:20px;">Di era Pandemi ini
                             serta menyebarkan informasi yang tidak benar.</div>', unsafe_allow_html=True)
 st.markdown('<br>', unsafe_allow_html=True)
 st.markdown("---")
-st.markdown('<div style="text-align: center;font-size:30px;font-weight:bold;">Kejadian Cyber Attack di Indonesia</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center;font-size:20px;font-weight:bold;">Kejadian Cyber Attack di Indonesia</div>', unsafe_allow_html=True)
 st.markdown('<br>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
 with col1:
@@ -65,13 +65,40 @@ with col2:
 with col3:
     st.metric("2019", "290,300,000")
 st.markdown('<br>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: justify;font-size:20px;">Menurut Badan Siber dan Sandi Negara (BSSN), sedikitnya 888.711.736\
+st.markdown('<div style="text-align: justify;font-size:15px;">Menurut Badan Siber dan Sandi Negara (BSSN), sedikitnya 888.711.736\
      seragan siber melanda Indonesia dari Januari-Agustus 2021, angka ini\
          meningkat dua kali lipat dibandingkan tahun sebelunya, sebagai \
              perbandingan nya seragan siber yang terjadi di Indonesia sebanyak \
                 290 Juta pada 2019 dan 495 juta pada 2020.\
     </div>', unsafe_allow_html=True)
 st.markdown('<br>', unsafe_allow_html=True)
+
+labels = ['Akademik','Swasta','Pemerintah Daerah','Pemerintah Pusat', 'Hukum', 'Personal', 'Lainnya']
+values = [38, 25, 17, 8, 4, 3, 5]
+kolom1, kolom2 = st.columns([2,1])
+with kolom1:
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
+    fig.update_layout(
+        autosize=False,
+        width=700,
+        height=700
+    )
+    st.plotly_chart(fig, use_container_width=True)
+with kolom2:
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align: justify;font-size:15px;">Sementara itu, sebaran\
+         serangan siber tertinggi sampai terendah meliputi bidang akademik sebesar 38,3 \
+            persen, swasta sebesar 25,37 persen, pemerintah daerah sebesar 16,86 persen, \
+                pemerintah pusat sebesar 8,26 persen, hukum sebesar 4,18 persen, dan \
+                    personal sebesar 2,66 persen.\
+                        </div>', unsafe_allow_html=True)
+
 
 df = pd.read_csv("patrolisiber.csv")
 df.astype({col: int for col in df.columns[1:]})
