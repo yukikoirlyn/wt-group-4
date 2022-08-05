@@ -1,4 +1,3 @@
-from msilib import type_short
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
